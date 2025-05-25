@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>bytespy | private tf2 cheat</title>
+  <link rel="icon" href="logo.png" type="image/png">
+  <!-- roboto + google material icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    :root {
+      --accent: #ff3271;
+    }
+    /* Prevent scrolling */
+    html, body {
+      margin: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.7rem;
+      background: #0d0d0d;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+      text-align: center;
+    }
+    /* Hide all tab content by default */
+.tab-content {
+  display: none;
+  width: 100%;
+  max-width: 800px;
+  /* center it: */
+  margin: 0 auto 3rem;
+  overflow-y: auto;
+}
+
+    .tab-content.active { display: block; }
+
+    /* Center logo */
+    .logo {
+      width: 100px;
+      height: auto;
+      display: block;
+      margin: 0 auto 1rem;
+      transform: translateX(-5px);
+    }
+.main-wrapper {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center; /* ensure any text in here is centered */
+}
+
+
+    /* Responsive video container */
+.video-container {
+  position: relative;
+  width: 75%;
+  max-width: 640px;
+  padding-bottom: calc(56.25% - 35px);
+  /* center: */
+  margin: 1rem auto 0;
+}
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Navigation Tabs */
+    nav {
+      width: 100%; max-width: 800px;
+      display: flex; justify-content: center;
+      gap: 1rem; margin-bottom: 2rem;
+    }
+    nav button {
+      background: none; border: none;
+      color: #aaa;
+      padding: 0.75rem 1.5rem;
+      border-bottom: 2px solid transparent;
+      text-transform: lowercase;
+      font: inherit;
+      cursor: pointer;
+      transition: color 0.3s, border-color 0.3s;
+    }
+    nav button:hover,
+    nav button.active {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    a { color: var(--accent); }
+    a:focus { outline: 2px solid var(--accent); }
+
+    h1, .features-title, .contact-title {
+      color: var(--accent);
+      margin: 0.5rem 0;
+      text-transform: lowercase;
+    }
+
+    p.tagline {
+      color: #aaa;
+      margin-bottom: 2rem;
+      text-transform: lowercase;
+    }
+
+    .features, .contact-info { padding: 0; list-style: none; }
+    .features li {
+      margin: 1rem 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-transform: lowercase;
+    }
+    .material-icons {
+      font-size: 1.8rem;
+      margin-bottom: 0.25rem;
+      color: var(--accent);
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const buttons = document.querySelectorAll('nav button');
+      const tabs = document.querySelectorAll('.tab-content');
+      function activateTab(id) {
+        tabs.forEach(tab => tab.classList.toggle('active', tab.id === id));
+        buttons.forEach(btn => btn.classList.toggle('active', btn.dataset.target === id));
+      }
+      buttons.forEach(btn => btn.addEventListener('click', () => {
+        activateTab(btn.dataset.target);
+      }));
+      // Initialize first tab
+      if (buttons[0]) activateTab(buttons[0].dataset.target);
+    });
+  </script>
+</head>
+<body>
+  <img src="logo.png" alt="bytespy logo" class="logo">
+  <nav>
+    <button data-target="about">about</button>
+    <button data-target="features">features</button>
+    <button data-target="contact">contact</button>
+  </nav>
+
+  <section id="about" class="tab-content">
+    <h1>about</h1>
+    <p class="tagline">exclusive tf2 cheat made for friends. access by trust only.</p>
+    <div class="about-content">
+      <p>bytespy is our number one solution to owning legits. many people consider it the best tf2 cheat.</p>
+      <div class="video-container">
+        <!-- Switched to youtube-nocookie domain -->
+        <iframe
+            src="https://www.youtube.com/embed/KKaTfMpSlNQ"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+<section id="features" class="tab-content">
+  <h2 class="features-title">features</h2>
+  <ul class="features">
+    <li><span class="material-icons">psychology</span>hvh features</li>
+    <li><span class="material-icons">visibility</span>amazing visuals</li>
+    <li><span class="material-icons">gps_fixed</span>projectile prediction</li>
+    <li><span class="material-icons">directions_run</span>backtrack and movement tools</li>
+    <li><span class="material-icons">security</span>undetected by vac as of latest patch</li>
+  </ul>
+</section>
+
+  <section id="contact" class="tab-content">
+    <h2 class="contact-title">contact</h2>
+   <style>
+  .contact-info {
+    text-align: center;
+  }
+  .discord-username {
+    display: inline-block;
+    color: rgb(255, 50, 113);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.9em;
+    padding: 2px 6px;
+    border-radius: 3px;
+    margin: 4px 6px;
+    border: 1px solid rgb(255, 50, 113);
+    /* no background-color, so it will be transparent */
+  }
+  .discord-label {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 6px;
+  }
+</style>
+
+<div class="contact-info">
+  <p class="discord-label">Discord</p>
+  <span class="discord-username">enginevgui</span>
+  <span class="discord-username">narrowon</span>
+</div>
+
+  </section>
+</body>
+</html>
